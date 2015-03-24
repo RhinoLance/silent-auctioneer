@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Silent Auctioneer</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.min.css" />
+
+    <!-- Component Scripts -->
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/q/q.js"></script>
+
+    <!-- Application Scripts -->
+    <script src="scripts/RhinoLib.WebSQL.js"></script>
+    <script src="scripts/app.js"></script>
+
+</head>
+<body class="container-fluid" ng-controller="MainController">
+    <div id="header" class="row">
+        Silent Auctioneer
+    </div>
+
+    <div id="content" class="row" ng-view>
+        <!-- angular templating -->
+        <!-- this is where content will be injected -->
+        {{message}}
+    </div>
+
+    <div id="footer" class="row">
+        <div class="col-xs-4"><a href="#stock" class="fa fa-tags"></a></div>
+        <div class="col-xs-4"><a href="#bids" class="fa fa-legal"></a></div>
+        <div class="col-xs-4"><a href="#result" class="fa fa-bullhorn"></a></div>
+        <div class="fa fa-trash" ng-click="wipeDb()"></div>
+    </div>
+</body>
+</html>

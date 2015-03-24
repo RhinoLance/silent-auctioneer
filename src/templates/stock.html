@@ -1,0 +1,29 @@
+
+    <div class="jumbotron text-center">
+        <h1>{{ message }} Page</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-2">ID</div>
+        <div class="col-xs-7">Description</div>
+        <div class="col-xs-1">Units</div>
+        <div class="col-xs-1">Reserve</div>
+    </div>
+
+    <div class="row" ng-repeat="item in stockList">
+        <div class="col-xs-2">{{item.StockId}}</div>
+        <div class="col-xs-7">{{item.Description}}</div>
+        <div class="col-xs-1">{{item.Units}}</div>
+        <div class="col-xs-1">{{item.Reserve}}</div>
+        <div class="col-xs-1 fa fa-trash rowIcon red" ng-click="removeStockItem(item.StockId)"></div>
+    </div>
+    <div class="row">
+        <form ng-submit="addStockItem()">
+            <div class="col-xs-2"><input type="text" class="form-control" placeholder="ID" ng-model="newStock.StockId"></div>
+            <div class="col-xs-7"><input type="description" class="form-control" placeholder="Description" id="inputDescription" ng-model="newStock.Description"></div>
+            <div class="col-xs-1"><input type="number" class="form-control" placeholder="Units" ng-model="newStock.Units"></div>
+            <div class="col-xs-1"><input type="number" class="form-control" placeholder="Reserve" ng-model="newStock.Reserve"></div>
+            <div class="col-xs-1 fa fa-plus rowIcon blue" ng-click="addStockItem()"></div>
+            <input type="submit" style="position: absolute; top: -1000; left: -1000;"/>
+        </form>
+    </div>
